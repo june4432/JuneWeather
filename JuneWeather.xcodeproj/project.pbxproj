@@ -30,6 +30,7 @@
 		BE874621234F67850094BA71 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BEF81942234F6FDC0078933D /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		BEF81944234F6FF50078933D /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
+		BEF81948234F799F0078933D /* summaryApi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = summaryApi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 		BE87460C234F675F0094BA71 /* JuneWeather */ = {
 			isa = PBXGroup;
 			children = (
+				BEF81946234F796A0078933D /* ProtoType */,
 				BEF81941234F6F9E0078933D /* Cell */,
 				BE87460D234F675F0094BA71 /* AppDelegate.swift */,
 				BE87460F234F675F0094BA71 /* SceneDelegate.swift */,
@@ -82,6 +84,14 @@
 				BEF81944234F6FF50078933D /* ForecastTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		BEF81946234F796A0078933D /* ProtoType */ = {
+			isa = PBXGroup;
+			children = (
+				BEF81948234F799F0078933D /* summaryApi.playground */,
+			);
+			path = ProtoType;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
