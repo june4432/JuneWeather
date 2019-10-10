@@ -13,6 +13,7 @@
 		BE874615234F675F0094BA71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE874613234F675F0094BA71 /* Main.storyboard */; };
 		BE874617234F67610094BA71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE874616234F67610094BA71 /* Assets.xcassets */; };
 		BE87461A234F67610094BA71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE874618234F67610094BA71 /* LaunchScreen.storyboard */; };
+		BE874622234F67850094BA71 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE874621234F67850094BA71 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		BE874616234F67610094BA71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE874619234F67610094BA71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE87461B234F67610094BA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE874621234F67850094BA71 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BE874616234F67610094BA71 /* Assets.xcassets */,
 				BE874618234F67610094BA71 /* LaunchScreen.storyboard */,
 				BE87461B234F67610094BA71 /* Info.plist */,
+				BE874621234F67850094BA71 /* Common.swift */,
 			);
 			path = JuneWeather;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE874622234F67850094BA71 /* Common.swift in Sources */,
 				BE874612234F675F0094BA71 /* ViewController.swift in Sources */,
 				BE87460E234F675F0094BA71 /* AppDelegate.swift in Sources */,
 				BE874610234F675F0094BA71 /* SceneDelegate.swift in Sources */,
@@ -284,7 +288,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7PE3WFRXS;
 				INFOPLIST_FILE = JuneWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,6 +298,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zerojune.JuneWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,7 +308,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7PE3WFRXS;
 				INFOPLIST_FILE = JuneWeather/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +318,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = zerojune.JuneWeather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
