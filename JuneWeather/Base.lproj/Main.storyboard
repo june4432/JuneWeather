@@ -41,11 +41,11 @@
                                     <constraint firstItem="t01-o7-YxK" firstAttribute="leading" secondItem="hyA-vT-oN1" secondAttribute="leading" id="sIg-FS-1Zw"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="29a-bH-3QC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="29a-bH-3QC">
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="180" id="kjw-29-uRA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="180" id="kjw-29-uRA" customClass="SummaryTableViewCell" customModule="JuneWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kjw-29-uRA" id="nIa-1n-zfE">
@@ -95,8 +95,15 @@
                                                 <constraint firstItem="7OO-V9-m0w" firstAttribute="height" secondItem="a4K-zL-aPN" secondAttribute="height" id="tJ3-WS-Qeo"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="SummaryTableViewCell"/>
+                                        <connections>
+                                            <outlet property="currentTemprature" destination="ahl-1f-vfk" id="rp0-hy-LMJ"/>
+                                            <outlet property="minMaxLabel" destination="KT9-m8-iQ3" id="0CO-mP-4RX"/>
+                                            <outlet property="statusLabel" destination="7OO-V9-m0w" id="SlL-DI-oBk"/>
+                                            <outlet property="weatherImageView" destination="a4K-zL-aPN" id="xfF-cy-9Yv"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="1wG-S4-bWg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="1wG-S4-bWg" customClass="ForecastTableViewCell" customModule="JuneWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="208" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1wG-S4-bWg" id="3dB-o6-JA2">
@@ -151,6 +158,14 @@
                                                 <constraint firstItem="ydl-en-JWt" firstAttribute="centerY" secondItem="1WQ-ny-IZG" secondAttribute="centerY" id="xgY-qe-ltf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="ForecastTableViewCell"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="dDm-UH-Yet" id="EvF-QR-GTf"/>
+                                            <outlet property="statusLabel" destination="ydl-en-JWt" id="f4k-ll-y3n"/>
+                                            <outlet property="tempratureLabel" destination="1WQ-ny-IZG" id="qkb-8L-b6u"/>
+                                            <outlet property="timeLabel" destination="KSf-0E-yFj" id="I1d-zC-hbH"/>
+                                            <outlet property="weatherImageLabel" destination="khk-fZ-AsO" id="G4K-3o-X1Z"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
