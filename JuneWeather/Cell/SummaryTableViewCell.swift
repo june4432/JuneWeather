@@ -10,7 +10,6 @@ import UIKit
 
 class SummaryTableViewCell: UITableViewCell {
 
-    
     static let identifier = "SummaryTableViewCell"
     
     @IBOutlet weak var weatherImageView: UIImageView!
@@ -19,7 +18,10 @@ class SummaryTableViewCell: UITableViewCell {
     
     @IBOutlet weak var minMaxLabel: UILabel!
     
-    @IBOutlet weak var currentTemprature: UILabel!
+    @IBOutlet weak var currentTemperatureLabel: UILabel!
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

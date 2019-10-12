@@ -12,16 +12,18 @@ class ForecastTableViewCell: UITableViewCell {
 
     static let identifier = "ForecastTableViewCell"
     
+    
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    @IBOutlet weak var weatherImageLabel: UIImageView!
+    @IBOutlet weak var weatherImageView: UIImageView!
     
     @IBOutlet weak var statusLabel: UILabel!
     
-    @IBOutlet weak var tempratureLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
     
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
