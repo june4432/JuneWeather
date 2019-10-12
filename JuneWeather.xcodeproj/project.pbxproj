@@ -28,6 +28,7 @@
 		BE874619234F67610094BA71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE87461B234F67610094BA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE874621234F67850094BA71 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		BEA948912351ADC600790A30 /* forecastApi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = forecastApi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BEF81942234F6FDC0078933D /* SummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewCell.swift; sourceTree = "<group>"; };
 		BEF81944234F6FF50078933D /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		BEF81948234F799F0078933D /* summaryApi.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = summaryApi.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -90,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				BEF81948234F799F0078933D /* summaryApi.playground */,
+				BEA948912351ADC600790A30 /* forecastApi.playground */,
 			);
 			path = ProtoType;
 			sourceTree = "<group>";
