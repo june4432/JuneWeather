@@ -8,4 +8,4 @@
 
 import Foundation
 
-let apiKey = "4f3f4118-08e1-4193-a892-b0d642821a2e";
+let appKey = "4f3f4118-08e1-4193-a892-b0d642821a2e";
