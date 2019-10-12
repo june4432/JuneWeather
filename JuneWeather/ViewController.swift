@@ -10,7 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var listTableVIew: UITableView!
+    
+    @IBOutlet weak var listTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -21,6 +24,8 @@ class ViewController: UIViewController {
 
 
 extension ViewController:UITableViewDataSource{
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -45,4 +50,5 @@ extension ViewController:UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: ForecastTableViewCell.identifier, for: indexPath)
         return cell
     }
+    
 }
