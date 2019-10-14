@@ -70,7 +70,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        locationLabel.text = "위치를 파악중..."
+        locationLabel.text = "업데이트 중..."
         
         if CLLocationManager.locationServicesEnabled() {
             switch CLLocationManager.authorizationStatus() {
@@ -113,6 +113,23 @@ extension ViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let loc = locations.first {
+            print(loc.coordinate)
+            
+            let decoder = CLGeocoder()
+            decoder.reverseGeocodeLocation(loc){[weak self] (placemarks, error) in
+                if let place = placemarks?.first {
+                    if let gu = place.locality, let dong = place.subLocality {
+                        self?.locationLabel.text = "\(gu) \(dong)"
+                    }else{
+                        self?.locationLabel.text = place.name
+                    }
+                    
+                }
+                
+            }
+        }
+        
         manager.stopUpdatingLocation()
     }
     
