@@ -42,7 +42,21 @@ class ViewController: UIViewController {
             self?.listTableView.reloadData()
         }
     }
-
+    
+    var topInset: CGFloat = 0.0
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if topInset == 0.0 {
+            let first = IndexPath(row:0, section:0)
+            if let cell = listTableView.cellForRow(at: first) {
+                topInset = listTableView.frame.height - cell.frame.height
+                listTableView.contentInset = UIEdgeInsets(top:topInset, left:0, bottom:0, right:0)
+            }
+            
+        }
+    }
 
 }
 
