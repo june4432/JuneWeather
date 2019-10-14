@@ -10,10 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let tempFormatter :NumberFormatter = {
+    let tempFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 1
+        
+        return formatter
+    }()
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "Ko_KR")
         
         return formatter
     }()
@@ -23,7 +30,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //뷰가 실행되고 나면 아래의 코드를 실행한다. 위도 경도를 갖고와서 fetchSummary와 fetchForecast를 수행한다.
         WeatherDataSource.shared.fetchSummary(lat: 37.59063130183221, lon: 127.01762655200862){
+            [weak self] in
+            self?.listTableView.reloadData()
+        }
+        
+        WeatherDataSource.shared.fetchForecast(lat: 37.59063130183221, lon: 127.01762655200862){
             [weak self] in
             self?.listTableView.reloadData()
         }
@@ -45,7 +59,7 @@ extension ViewController:UITableViewDataSource{
         case 0:
             return 1
         case 1:
-            return 0
+            return WeatherDataSource.shared.forecastList.count
         default:
             return 0
         }
@@ -77,6 +91,21 @@ extension ViewController:UITableViewDataSource{
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ForecastTableViewCell.identifier, for: indexPath) as! ForecastTableViewCell
+        
+        let target = WeatherDataSource.shared.forecastList[indexPath.row]
+        dateFormatter.dateFormat = "M.d (E)"
+        cell.dateLabel.text = dateFormatter.string(from: target.date)
+        
+        dateFormatter.dateFormat = "HH:00"
+        cell.timeLabel.text = dateFormatter.string(from: target.date)
+        
+        cell.weatherImageView.image = UIImage(named: target.skyCode)
+        
+        cell.statusLabel.text = target.skyName
+        
+        let tempStr = tempFormatter.string(for: target.temperature) ?? "-"
+        cell.temperatureLabel.text = "\(tempStr)°"
+        
         return cell
     }
     
