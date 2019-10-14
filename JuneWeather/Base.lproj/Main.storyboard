@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="XYl-O5-RWA">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ccD-4g-eEx">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyA-vT-oN1">
@@ -45,7 +45,7 @@
                                 <rect key="frame" x="0.0" y="104" width="414" height="758"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="180" id="9UX-fG-u3E" customClass="SummaryTableViewCell" customModule="JuneWeather" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SummaryTableViewCell" rowHeight="180" id="9UX-fG-u3E" customClass="SummaryTableViewCell" customModule="JuneWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9UX-fG-u3E" id="v4I-zg-vxp">
@@ -94,15 +94,17 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="qCH-G4-Lwx" secondAttribute="trailing" id="sm7-Dz-svS"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="SummaryTableViewCell"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="SummaryTableViewCell">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
                                         <connections>
-                                            <outlet property="ImageView" destination="Jvt-Z9-UU6" id="zV3-6B-zyE"/>
                                             <outlet property="currentTemperatureLabel" destination="Uvm-w6-Ylh" id="e9c-2M-pdA"/>
                                             <outlet property="minMaxLabel" destination="myX-oa-mfp" id="CuX-az-f9a"/>
                                             <outlet property="statusLabel" destination="qCH-G4-Lwx" id="mXD-nK-ixB"/>
+                                            <outlet property="weatherImageView" destination="Jvt-Z9-UU6" id="Vi1-QD-rTn"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="80" id="Gvj-q4-AP1" customClass="ForecastTableViewCell" customModule="JuneWeather" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ForecastTableViewCell" rowHeight="80" id="Gvj-q4-AP1" customClass="ForecastTableViewCell" customModule="JuneWeather" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="208" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gvj-q4-AP1" id="XGO-lg-VIA">
@@ -157,7 +159,9 @@
                                                 <constraint firstItem="142-37-lEP" firstAttribute="centerY" secondItem="cG3-Eq-uCI" secondAttribute="centerY" id="yYl-xA-FVh"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" identifier="ForecastTableViewCell"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ForecastTableViewCell">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
                                         <connections>
                                             <outlet property="dateLabel" destination="C6g-7n-cQq" id="Fnq-K2-56n"/>
                                             <outlet property="statusLabel" destination="142-37-lEP" id="bMc-kt-WBL"/>
@@ -175,7 +179,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="hyA-vT-oN1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0Fu-Hk-BI7"/>
-                            <constraint firstItem="XYl-O5-RWA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6hb-WK-VdC"/>
+                            <constraint firstItem="XYl-O5-RWA" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6hb-WK-VdC"/>
                             <constraint firstItem="Rkh-g0-qr4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="7pS-VZ-z2j"/>
                             <constraint firstItem="XYl-O5-RWA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A8P-dM-lz5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hyA-vT-oN1" secondAttribute="trailing" id="FPE-ws-rLn"/>
@@ -185,9 +189,9 @@
                             <constraint firstItem="Rkh-g0-qr4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kz3-dr-TDd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rkh-g0-qr4" secondAttribute="trailing" id="Q3f-QC-Qc3"/>
                             <constraint firstItem="ccD-4g-eEx" firstAttribute="height" secondItem="XYl-O5-RWA" secondAttribute="height" id="Qcg-Tl-mKM"/>
-                            <constraint firstItem="XYl-O5-RWA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cFM-2c-efB"/>
+                            <constraint firstItem="XYl-O5-RWA" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cFM-2c-efB"/>
                             <constraint firstItem="ccD-4g-eEx" firstAttribute="centerY" secondItem="XYl-O5-RWA" secondAttribute="centerY" id="fVI-9w-YNH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XYl-O5-RWA" secondAttribute="bottom" id="ijP-ss-cHA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="XYl-O5-RWA" secondAttribute="bottom" id="ijP-ss-cHA"/>
                             <constraint firstItem="XYl-O5-RWA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rD1-Tz-iBT"/>
                             <constraint firstItem="ccD-4g-eEx" firstAttribute="centerX" secondItem="XYl-O5-RWA" secondAttribute="centerX" id="rYk-qO-A9m"/>
                             <constraint firstItem="hyA-vT-oN1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="txn-h3-x5k"/>

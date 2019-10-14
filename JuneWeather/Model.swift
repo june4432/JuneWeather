@@ -141,11 +141,7 @@ class WeatherDataSource{
     
     func fetchSummary(lat: Double, lon: Double, completion: @escaping () -> ()){
         
-        defer{
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
+        
         //api주소
         let apiUrl = "https://apis.openapi.sk.com/weather/current/minutely?ver=2&lat=\(lat)&lon=\(lon)&appKey=\(appKey)"
 
@@ -159,6 +155,12 @@ class WeatherDataSource{
         //session.dataTask(with:url){ (data, response, error) in
         //데이터테스크 메소드를 호출함으로써 api 호출 결과값을 가져온다.
         let task = session.dataTask(with: url) { (data, response, error) in
+            
+            defer{
+                DispatchQueue.main.async {
+                    completion()
+                }
+            }
             
             //에러 파라미터를 보고 에러가 발생한 경우 에러를 호출하고 종료
             if let error = error {
@@ -204,11 +206,7 @@ class WeatherDataSource{
     func fetchForecast(lat: Double, lon: Double, completion: @escaping () -> ()){
         forecastList.removeAll()
         
-        defer{
-             DispatchQueue.main.async {
-                           completion()
-                       }
-        }
+        
         
         let apiUrl = "https://apis.openapi.sk.com/weather/forecast/3days?ver=2&lat=\(lat)&lon=\(lon)&appKey=\(appKey)"
 
@@ -222,6 +220,12 @@ class WeatherDataSource{
         //session.dataTask(with:url){ (data, response, error) in
         //데이터테스크 메소드를 호출함으로써 api 호출 결과값을 가져온다.
         let task = session.dataTask(with: url) { (data, response, error) in
+            
+            defer{
+                DispatchQueue.main.async {
+                    completion()
+                }
+            }
             
             //에러 파라미터를 보고 에러가 발생한 경우 에러를 호출하고 종료
             if let error = error {
