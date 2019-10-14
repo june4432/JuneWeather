@@ -27,7 +27,12 @@ class ForecastTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        backgroundColor = UIColor.clear
+        statusLabel.textColor = UIColor.white
+        dateLabel.textColor = statusLabel.textColor
+        timeLabel.textColor = statusLabel.textColor
+        temperatureLabel.textColor = statusLabel.textColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

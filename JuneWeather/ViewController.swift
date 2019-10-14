@@ -28,8 +28,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var listTableView: UITableView!
     
     
+    //뷰가 로드될때 한번만 실행된다.
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listTableView.backgroundColor = UIColor.clear
+        listTableView.separatorStyle = .none
+        listTableView.showsVerticalScrollIndicator = false
         
         //뷰가 실행되고 나면 아래의 코드를 실행한다. 위도 경도를 갖고와서 fetchSummary와 fetchForecast를 수행한다.
         WeatherDataSource.shared.fetchSummary(lat: 37.59063130183221, lon: 127.01762655200862){
