@@ -56,16 +56,18 @@ class ViewController: UIViewController {
         listTableView.separatorStyle = .none
         listTableView.showsVerticalScrollIndicator = false
         
-        //뷰가 실행되고 나면 아래의 코드를 실행한다. 위도 경도를 갖고와서 fetchSummary와 fetchForecast를 수행한다.
-        WeatherDataSource.shared.fetchSummary(lat: 37.59063130183221, lon: 127.01762655200862){
-            [weak self] in
-            self?.listTableView.reloadData()
-        }
         
-        WeatherDataSource.shared.fetchForecast(lat: 37.59063130183221, lon: 127.01762655200862){
-            [weak self] in
-            self?.listTableView.reloadData()
-        }
+        
+        //뷰가 실행되고 나면 아래의 코드를 실행한다. 위도 경도를 갖고와서 fetchSummary와 fetchForecast를 수행한다.
+//        WeatherDataSource.shared.fetchSummary(lat: 37.59063130183221, lon: 127.01762655200862){
+//            [weak self] in
+//            self?.listTableView.reloadData()
+//        }
+//
+//        WeatherDataSource.shared.fetchForecast(lat: 37.59063130183221, lon: 127.01762655200862){
+//            [weak self] in
+//            self?.listTableView.reloadData()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,16 +119,18 @@ extension ViewController: CLLocationManagerDelegate {
             print(loc.coordinate)
             
             let decoder = CLGeocoder()
-            decoder.reverseGeocodeLocation(loc){[weak self] (placemarks, error) in
+            decoder.reverseGeocodeLocation(loc){ [weak self] (placemarks, error) in
                 if let place = placemarks?.first {
                     if let gu = place.locality, let dong = place.subLocality {
                         self?.locationLabel.text = "\(gu) \(dong)"
                     }else{
                         self?.locationLabel.text = place.name
                     }
-                    
                 }
-                
+            }
+            
+            WeatherDataSource.shared.fetch(location:loc) {
+                self.listTableView.reloadData()
             }
         }
         
